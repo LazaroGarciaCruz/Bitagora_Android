@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lazarogarciacruz.bitagora.vista.newTaskScreen.CreateTaskActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/mainViewBlackBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.7"
+                android:background="#000000" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/mainViewNuevoJuegoComponentes"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/window_body_patched"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/window_header_patched"/>
+
+                    <TextView
+                        android:id="@+id/taskFragmentTitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="7dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#F3D6B7"
+                        android:textColor="#800040"
+                        android:textSize="20sp"
+                        android:text="Guardar como..."/>
+
+                    <Button
+                        android:id="@+id/taskFragmentBotonCerrar"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|right"
+                        android:background="@android:color/transparent"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4">
+
+                        <EditText
+                            android:id="@+id/taskFragmentTextoNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="0dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:background="@drawable/window_border_patched"
+                            android:textSize="14sp"
+                            android:textColor="#800040"
+                            android:maxLines="1"
+                            android:maxLength="100"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="0.2"
+                        android:gravity="center">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp">
+
+                            <Button
+                                android:id="@+id/taskFragmentBotonDificultadFacil"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:layout_gravity="top|left"
+                                android:background="@drawable/dificultad_facil_color"/>
+
+                            <Button
+                                android:id="@+id/taskFragmentBotonDificultadNormal"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:layout_gravity="top|center"
+                                android:background="@drawable/dificultad_normal_desactivado"/>
+
+                            <Button
+                                android:id="@+id/taskFragmentBotonDificultadDificil"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:layout_gravity="top|right"
+                                android:background="@drawable/dificultad_dificil_desactivado"/>
+
+                            <Button
+                                android:id="@+id/taskFragmentBotonPrioridadBaja"
+                                android:layout_width="76dp"
+                                android:layout_height="76dp"
+                                android:layout_gravity="bottom|left"
+                                android:background="@drawable/prioridad_baja_star_color"/>
+
+                            <Button
+                                android:id="@+id/taskFragmentBotonPrioridadMedia"
+                                android:layout_width="76dp"
+                                android:layout_height="76dp"
+                                android:layout_gravity="bottom|center"
+                                android:background="@drawable/prioridad_media_star_desactivado"/>
+
+                            <Button
+                                android:id="@+id/taskFragmentBotonPrioridadAlta"
+                                android:layout_width="76dp"
+                                android:layout_height="76dp"
+                                android:layout_gravity="bottom|right"
+                                android:background="@drawable/prioridad_alta_star_desactivado"/>
+
+                        </FrameLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="0dp"
+                        android:layout_weight="0.40"
+                        android:gravity="top|center">
+
+                        <Button
+                            android:id="@+id/taskFragmentBotonGuardar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="15dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/window_button_patched"
+                            android:text="GUARDAR"
+                            android:textSize="20dp"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</android.support.v4.widget.NestedScrollView>

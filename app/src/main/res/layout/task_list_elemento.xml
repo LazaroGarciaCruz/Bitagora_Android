@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:background="@drawable/monitor_black_patched"/>
+
+    <FrameLayout
+        android:id="@+id/task_list_contenido_monitor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        android:background="#008040">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.4">
+
+                <com.lazarogarciacruz.bitagora.utilidades.TypewriterText
+                    android:id="@+id/task_list_texto_titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:gravity="left|center"
+                    android:layout_gravity="center|start"
+                    android:layout_margin="3dp"
+                    android:text=""/>
+
+                <com.lazarogarciacruz.bitagora.utilidades.TypewriterText
+                    android:id="@+id/task_list_texto_fecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:gravity="left|center"
+                    android:layout_gravity="center|start"
+                    android:layout_margin="3dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="0.6"
+                android:padding="10dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/task_list_prioridad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/task_list_dificultad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/task_list_scanlines"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="6dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+
+    <LinearLayout
+        android:id="@+id/task_list_scanlines_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/task_list_contenido_borrar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/task_list_texto_borrar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="BORRAR"
+            android:textSize="30dp"
+            android:orientation="horizontal"/>
+
+        <Button
+            android:id="@+id/task_list_boton_borrar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:layout_gravity="center"
+            android:background="@null"/>
+
+        <Button
+            android:id="@+id/task_list_boton_atras"
+            android:layout_width="44dp"
+            android:layout_height="48dp"
+            android:layout_gravity="left"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@null"
+            android:textColor="#FFFFFF"
+            android:text="X"
+            android:textSize="20sp"/>
+
+        </FrameLayout>
+
+</FrameLayout>

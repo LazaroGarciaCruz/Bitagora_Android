@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daasuu.bl.BubbleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    app:bl_arrowDirection="top"
+    app:bl_arrowHeight="12dp"
+    app:bl_arrowWidth="12dp"
+    app:bl_bubbleColor="#FC0254"
+    app:bl_cornersRadius="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/botonFechaAscendente"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ordenacion_fecha_ascendente"/>
+
+        <Button
+            android:id="@+id/botonFechaDescendente"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ordenacion_fecha_descendente"/>
+
+        <Button
+            android:id="@+id/botonDificultadAscendente"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ordenacion_dificultad_ascendente"/>
+
+        <Button
+            android:id="@+id/botonDificultadDescendente"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ordenacion_dificultad_descendente"/>
+
+        <Button
+            android:id="@+id/botonPrioridadAscendente"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ordenacion_prioridad_ascendente"/>
+
+        <Button
+            android:id="@+id/botonPrioridadDescendente"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:background="@drawable/ordenacion_prioridad_descendente"/>
+
+
+    </LinearLayout>
+
+</com.daasuu.bl.BubbleLayout>

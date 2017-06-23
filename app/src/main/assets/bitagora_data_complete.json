@@ -1,0 +1,51 @@
+{
+  "juegos" : [
+    {
+      "id" : "ZAEDFNOAPO",
+      "titulo" : "the Legend of Zelda: Breath of the Wild",
+      "cover" : "cover.png",
+      "logo" : "logo.png"
+    }
+  ],
+  "title" : "Bitagora Dataset",
+  "last_update" : "02-06-2017 10:39:24.024",
+  "tasks" : [
+    {
+      "titulo" : "Como fabricar la armadura ancestral",
+      "componentes" : [
+        {
+          "tipo" : 1,
+          "texto" : "En el siguiente video podemos ver como conseguir los elementos para fabricar la Armadura Ancestral"
+        },
+        {
+          "tipo" : 5,
+          "isVideo" : true,
+          "URL" : "https:\/\/youtu.be\/SomZ_9OnE5w"
+        },
+        {
+          "tipo" : 1,
+          "texto" : "En resumen, los componentes son los siguientes:"
+        },
+        {
+          "id" : "AVFGO4NTQ1",
+          "elementosActuales" : 2,
+          "tipo" : 3,
+          "descripcion" : "Núcleo ancestral",
+          "maxElementos" : 5
+        },
+        {
+          "id" : "XZLLCFMRWP",
+          "elementosActuales" : 2,
+          "tipo" : 3,
+          "descripcion" : "Gran núcleo ancestral",
+          "maxElementos" : 3
+        }
+      ],
+      "idJuego" : "ZAEDFNOAPO",
+      "id" : "FOSVRZOMWO",
+      "prioridad" : 1,
+      "fecha" : "31-05-2017 10:59:26.026",
+      "dificultad" : 1
+    }
+  ]
+}

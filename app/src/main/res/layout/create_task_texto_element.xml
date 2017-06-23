@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:id="@+id/createTaskComponenteRoot">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/window_body_patched"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/window_header_patched"/>
+
+            <TextView
+                android:id="@+id/taskComponenteTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="7dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="#F3D6B7"
+                android:textColor="#800040"
+                android:textSize="20sp"
+                android:text="Componente para texto"/>
+
+            <Button
+                android:id="@+id/taskComponenteBotonCerrar"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|right"
+                android:background="@android:color/transparent"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/taskComponenteTextoCuerpo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:padding="15dp"
+            android:gravity="start"
+            android:background="@drawable/window_border_patched"
+            android:textSize="20sp"
+            android:textColor="#800040"
+            android:inputType="textMultiLine"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical" />
+
+
+    </FrameLayout>
+
+
+
+</FrameLayout>
