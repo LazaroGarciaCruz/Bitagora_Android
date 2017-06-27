@@ -366,17 +366,17 @@ public class CreateTaskRecyclerViewAdapter extends RecyclerView.Adapter {
 
                 GridLayoutManager.LayoutParams params = (GridLayoutManager.LayoutParams) itemView.getLayoutParams();
                 if (taskComponenteEnlace.getEnlaceVideo()) {
-                    params.height = cellHeight * 40;
+                    params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 45 : 40);
                     seccionVideoPlayer.setVisibility(View.VISIBLE);
                     seccionEnlaceFinal.setVisibility(View.GONE);
                     seccionValidarEnlace.setVisibility(View.GONE);
                 } else if (!taskComponenteEnlace.getEnlace().equals("")) {
-                    params.height = cellHeight * 15;
+                    params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 18 : 14);
                     seccionVideoPlayer.setVisibility(View.GONE);
                     seccionEnlaceFinal.setVisibility(View.VISIBLE);
                     seccionValidarEnlace.setVisibility(View.GONE);
                 } else {
-                    params.height = cellHeight * 15;
+                    params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 18 : 14);
                     seccionVideoPlayer.setVisibility(View.GONE);
                     seccionEnlaceFinal.setVisibility(View.GONE);
                     seccionValidarEnlace.setVisibility(View.VISIBLE);
@@ -609,13 +609,13 @@ public class CreateTaskRecyclerViewAdapter extends RecyclerView.Adapter {
             case TaskComponenteTipo.TEXTO:
                 view = LayoutInflater.from(context).inflate(R.layout.create_task_texto_element, parent, false);
                 GridLayoutManager.LayoutParams params = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-                params.height = cellHeight * 30;
+                params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 40 : 35);
                 view.setLayoutParams(params);
                 return new TipoTextoViewHolder(view);
             case TaskComponenteTipo.IMAGEN:
                 view = LayoutInflater.from(context).inflate(R.layout.create_task_imagen_element, parent, false);
                 params = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-                params.height = cellHeight * 40;
+                params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 45 : 40);
                 view.setLayoutParams(params);
                 return new TipoImagenViewHolder(view);
             case TaskComponenteTipo.ENLACE:
@@ -624,7 +624,7 @@ public class CreateTaskRecyclerViewAdapter extends RecyclerView.Adapter {
             case TaskComponenteTipo.CONTADOR:
                 view = LayoutInflater.from(context).inflate(R.layout.create_task_contador_element, parent, false);
                 params = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-                params.height = cellHeight * 15;
+                params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 18 : 14);
                 view.setLayoutParams(params);
                 return new TipoContadorViewHolder(view);
         }

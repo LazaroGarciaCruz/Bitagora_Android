@@ -51,10 +51,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="43dp"
+            android:layout_marginTop="43dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter" />
 

@@ -528,7 +528,7 @@ public class AnimatorManager {
                             textView.setText(" " + String.valueOf(caracter));
                             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                             textView.setGravity(Gravity.CENTER);
-                            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, MyApp.getInstance().isSmallScreen() ? 16 : 18);
                             textView.setTextColor(Color.RED);
                             textView.setVisibility(View.INVISIBLE);
                             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1);

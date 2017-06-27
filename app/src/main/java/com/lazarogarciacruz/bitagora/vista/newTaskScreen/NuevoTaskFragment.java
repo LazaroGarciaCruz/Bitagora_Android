@@ -12,6 +12,7 @@ import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.lazarogarciacruz.bitagora.R;
@@ -21,6 +22,7 @@ import com.lazarogarciacruz.bitagora.modelo.TaskPrioridad;
 import com.lazarogarciacruz.bitagora.utilidades.AnimatorManager;
 import com.lazarogarciacruz.bitagora.utilidades.DataMaganer;
 import com.lazarogarciacruz.bitagora.utilidades.FontManager;
+import com.lazarogarciacruz.bitagora.utilidades.MyApp;
 
 import java.util.LinkedList;
 
@@ -137,19 +139,14 @@ public class NuevoTaskFragment extends Fragment {
             }
         });
 
-        /*DisplayMetrics dm = new DisplayMetrics();
-        mainContext.getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int altura = dm.heightPixels / 100;
-
         View background = view.findViewById(R.id.mainViewBlackBackground);
         View componentes = view.findViewById(R.id.mainViewNuevoJuegoComponentes);
 
         //Determinamos la altura del panel de los componentes en funcion del tamaño de la pantalla
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) componentes.getLayoutParams();
-        params.height = altura * 40;*/
+        params.height = Math.round(MyApp.getInstance().getHeightPixels() * (MyApp.getInstance().isSmallScreen() ? 0.45f : 0.40f));
+        params.width = Math.round(MyApp.getInstance().getWidthPixels() * (MyApp.getInstance().isSmallScreen() ? 0.75f : 0.68f));
 
-        View background = view.findViewById(R.id.mainViewBlackBackground);
-        View componentes = view.findViewById(R.id.mainViewNuevoJuegoComponentes);
         AnimatorManager.getInstance().animarVentanaNuevoTask(this, background, componentes, true);
 
         return view;

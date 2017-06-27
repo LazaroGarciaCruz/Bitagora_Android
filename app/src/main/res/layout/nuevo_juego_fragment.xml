@@ -27,16 +27,15 @@
 
         <LinearLayout
             android:id="@+id/mainViewNuevoJuegoComponentes"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="500dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
             android:layout_marginBottom="25dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
 
             <FrameLayout
+                android:id="@+id/mainViewNuevoJuegoPreview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.4"
@@ -115,10 +114,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_marginBottom="27dp"
-                            android:layout_marginLeft="28dp"
-                            android:layout_marginRight="28dp"
-                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="32dp"
+                            android:layout_marginLeft="33dp"
+                            android:layout_marginRight="33dp"
+                            android:layout_marginTop="30dp"
                             android:adjustViewBounds="true"
                             android:cropToPadding="false"
                             android:scaleType="fitCenter" />

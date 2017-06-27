@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.lazarogarciacruz.bitagora.R;
 import com.lazarogarciacruz.bitagora.modelo.Juego;
 import com.lazarogarciacruz.bitagora.utilidades.AnimatorManager;
@@ -206,7 +207,7 @@ public class MainViewRecyclerViewAdapter extends RecyclerView.Adapter<MainViewRe
         }
 
         imagen = DataMaganer.getInstance().getStorage().getFile(juego.getId(), juego.getLogo());
-        Glide.with(MyApp.getContext()).load(imagen.getAbsolutePath()).crossFade().into(holder.gridLogo);
+        Glide.with(MyApp.getContext()).load(imagen.getAbsolutePath()).override(600, 200).crossFade().into(holder.gridLogo);
 
         holder.gridTexto.setVisibility(View.VISIBLE);
         if (!juego.getLogo().equals("")) {

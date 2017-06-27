@@ -108,6 +108,7 @@ public class TaskListRecyclerViewAdapter extends RecyclerView.Adapter<TaskListRe
 
             textoBorrar = (TextView) itemView.findViewById(R.id.task_list_texto_borrar);
             textoBorrar.setTypeface(FontManager.getInstance().getFont("fonts/Bitwise.ttf"));
+            textoBorrar.setTextSize(MyApp.getInstance().isSmallScreen() ? 20 : 25);
             textoBorrar.setTextColor(Color.GREEN);
             textoBorrar.setShadowLayer(10, 0, 0, Color.GREEN);
 
@@ -217,7 +218,7 @@ public class TaskListRecyclerViewAdapter extends RecyclerView.Adapter<TaskListRe
 
         View view = LayoutInflater.from(context).inflate(R.layout.task_list_elemento, parent, false);
         GridLayoutManager.LayoutParams params = (GridLayoutManager.LayoutParams) view.getLayoutParams();
-        params.height = cellHeight * 15;
+        params.height = cellHeight * (MyApp.getInstance().isSmallScreen() ? 18 : 15);
         view.setLayoutParams(params);
         view.setVisibility(View.VISIBLE);
 

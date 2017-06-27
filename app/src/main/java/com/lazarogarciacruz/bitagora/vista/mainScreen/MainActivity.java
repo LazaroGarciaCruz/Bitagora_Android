@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -19,6 +20,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,6 +37,7 @@ import com.lazarogarciacruz.bitagora.utilidades.AnimatorManager;
 import com.lazarogarciacruz.bitagora.utilidades.CustomFontText;
 import com.lazarogarciacruz.bitagora.utilidades.DataMaganer;
 import com.lazarogarciacruz.bitagora.utilidades.FontManager;
+import com.lazarogarciacruz.bitagora.utilidades.MyApp;
 import com.lazarogarciacruz.bitagora.vista.tasksScreen.TaskLisActivity;
 import pl.droidsonroids.gif.AnimationListener;
 import pl.droidsonroids.gif.GifDrawable;
@@ -78,6 +81,10 @@ public class MainActivity extends AppCompatActivity implements
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             gestionarPermisos(Manifest.permission.CAMERA, REQUEST_CODE_CAMERA);
         }
+
+        //Establecemos las propiedades del control de las medidas de la pantalla
+
+        MyApp.getInstance().configureScreenSettings(getWindowManager().getDefaultDisplay());
 
         //Gestionamos la inicializacion de los componentes
 
@@ -189,16 +196,29 @@ public class MainActivity extends AppCompatActivity implements
             gifImageView.setBackground(drawable);
             gifImageView.bringToFront();
 
+            ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
+            //params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 42 : 46, 15, 0); //substitute parameters for left, top, right, bottom
+            params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 87 : 145, 0, 0); //substitute parameters for left, top, right, bottom
+            gifImageView.setLayoutParams(params);
+
             gifImageView = (GifImageView) findViewById(R.id.mainViewCharacterSpeech);
             drawable = new GifDrawable(this.getAssets(), "gif/speechLista.gif");
             drawable.setLoopCount(0);
             gifImageView.setBackground(drawable);
             gifImageView.bringToFront();
 
+            params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
+            params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 70 : 119, 10, 0); //substitute parameters for left, top, right, bottom
+            gifImageView.setLayoutParams(params);
+
             gifImageView = (GifImageView) findViewById(R.id.mainViewCharacterSwitch);
             drawable = new GifDrawable(this.getAssets(), "gif/switch_off.gif");
             gifImageView.setBackground(drawable);
             gifImageView.bringToFront();
+
+            params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
+            params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 118 : 186, MyApp.getInstance().isSmallScreen() ? 100 : 135, 0); //substitute parameters for left, top, right, bottom
+            gifImageView.setLayoutParams(params);
 
             ImageView viewFront = (ImageView)findViewById(R.id.mainViewBackgroundFront);
             viewFront.bringToFront();
@@ -237,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements
             textView.setText(" " + String.valueOf(caracter));
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setGravity(Gravity.CENTER);
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, MyApp.getInstance().isSmallScreen() ? 17 : 18);
             textView.setTextColor(Color.RED);
             textView.setVisibility(View.INVISIBLE);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1);
@@ -359,7 +379,7 @@ public class MainActivity extends AppCompatActivity implements
     private void gestionarScrollRecyclerView() {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mainViewRecyclerView);
-        /*recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -430,7 +450,7 @@ public class MainActivity extends AppCompatActivity implements
 
             }
 
-        });*/
+        });
 
         //Con este metodo determinamos en que posicion del recycler view
         //pulsado el usuario cuando se hace scroll en el mismo

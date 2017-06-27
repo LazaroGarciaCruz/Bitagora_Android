@@ -66,7 +66,7 @@
             android:layout_height="0dp"
             android:id="@+id/mainViewGuideline1"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1"
+            app:layout_constraintGuide_percent="0.115"
             tools:layout_editor_absoluteY="91dp"
             tools:layout_editor_absoluteX="0dp" />
 

@@ -3,6 +3,7 @@ package com.lazarogarciacruz.bitagora.vista.tasksScreen;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import com.daasuu.bl.BubbleLayout;
@@ -23,6 +25,7 @@ import com.lazarogarciacruz.bitagora.modelo.Juego;
 import com.lazarogarciacruz.bitagora.modelo.Task;
 import com.lazarogarciacruz.bitagora.utilidades.DataMaganer;
 import com.lazarogarciacruz.bitagora.utilidades.FontManager;
+import com.lazarogarciacruz.bitagora.utilidades.MyApp;
 import com.lazarogarciacruz.bitagora.utilidades.TypewriterText;
 import com.lazarogarciacruz.bitagora.vista.detailTaskScreen.TaskDetailActivity;
 import com.lazarogarciacruz.bitagora.vista.newTaskScreen.CreateTaskActivity;
@@ -254,9 +257,18 @@ public class TaskLisActivity extends AppCompatActivity implements
             }
         });
 
+        Button botonFiltrar = (Button) findViewById(R.id.taskListViewBotonFiltrar);
+        botonFiltrar.setShadowLayer(10, 0, 0, Color.GREEN);
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)botonFiltrar.getLayoutParams();
+        params.setMargins(0, 0, MyApp.getInstance().isSmallScreen() ? 75 : 125, MyApp.getInstance().isSmallScreen() ? 5 : 20); //substitute parameters for left, top, right, bottom
+        botonFiltrar.setLayoutParams(params);
+
         Button botonCrearTrask = (Button) findViewById(R.id.taskListViewBotonCrearTask);
+        params = (FrameLayout.LayoutParams)botonCrearTrask.getLayoutParams();
+        params.setMargins(0, 0, MyApp.getInstance().isSmallScreen() ? 15 : 30, MyApp.getInstance().isSmallScreen() ? 5 : 20); //substitute parameters for left, top, right, bottom
+        botonCrearTrask.setLayoutParams(params);
         botonCrearTrask.setTextColor(Color.GREEN);
-        botonCrearTrask.setShadowLayer(10, 0, 0, Color.GREEN);
+        //botonCrearTrask.setShadowLayer(10, 0, 0, Color.GREEN);
         botonCrearTrask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

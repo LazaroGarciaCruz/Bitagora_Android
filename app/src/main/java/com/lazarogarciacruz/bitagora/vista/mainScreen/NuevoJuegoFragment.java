@@ -7,7 +7,10 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Point;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,11 +18,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -39,6 +44,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.ImageViewTarget;
 import com.bumptech.glide.request.target.Target;
+import com.github.florent37.viewanimator.ViewAnimator;
 import com.lazarogarciacruz.bitagora.R;
 import com.lazarogarciacruz.bitagora.utilidades.AnimatorManager;
 import com.lazarogarciacruz.bitagora.utilidades.DataMaganer;
@@ -215,16 +221,13 @@ public class NuevoJuegoFragment extends Fragment {
                 }
             });*/
 
-        DisplayMetrics dm = new DisplayMetrics();
-        mainContext.getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int altura = dm.heightPixels / 100;
-
         View background = view.findViewById(R.id.mainViewBlackBackground);
         View componentes = view.findViewById(R.id.mainViewNuevoJuegoComponentes);
 
         //Determinamos la altura del panel de los componentes en funcion del tamaño de la pantalla
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) componentes.getLayoutParams();
-        params.height = altura * 70;
+        params.height = Math.round(MyApp.getInstance().getHeightPixels() * (MyApp.getInstance().isSmallScreen() ? 0.75f : 0.7f));
+        params.width = Math.round(MyApp.getInstance().getWidthPixels() * (MyApp.getInstance().isSmallScreen() ? 0.75f : 0.68f));
 
         AnimatorManager.getInstance().animarVentanaNuevoJuego(this, background, componentes, true);
 
@@ -491,12 +494,23 @@ public class NuevoJuegoFragment extends Fragment {
 
                 Bitmap bitmap = BitmapFactory.decodeFile(nuevoJuegoImagenLogo.getAbsolutePath());
 
-                if (bitmap.getHeight() > bitmap.getWidth()) {
+                /*if (bitmap.getHeight() > bitmap.getWidth()) {
                     int yPos = (bitmap.getHeight() - bitmap.getWidth()) / 2;
                     nuevoJuegoBitmapLogo = Bitmap.createBitmap(bitmap, 0, yPos, bitmap.getWidth(), bitmap.getWidth() - (bitmap.getWidth() / 5));
                 } else {
-                    nuevoJuegoBitmapLogo = bitmap;
-                }
+
+                    int height = bitmap.getHeight();
+                    int width = bitmap.getWidth();
+                    float scaleWidth = ((float) width * 0.75f) / width;
+                    float scaleHeight = ((float) height * 0.75f) / height;
+                    // here we do resize the bitmap
+                    Matrix matrix = new Matrix();
+                    matrix.postScale(scaleWidth, scaleHeight);
+                    // and create new one
+                    nuevoJuegoBitmapLogo = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, false);
+                }*/
+
+                nuevoJuegoBitmapLogo = bitmap;
 
                 if (bitmap != null) {
                     logoUp.setImageBitmap(nuevoJuegoBitmapLogo);
