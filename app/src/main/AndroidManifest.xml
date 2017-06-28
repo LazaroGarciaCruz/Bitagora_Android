@@ -15,7 +15,8 @@
         android:largeHeap="true"
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/TransparentTheme">
+
         <activity
             android:name=".vista.mainScreen.MainActivity"
             android:windowSoftInputMode="adjustPan|stateHidden">

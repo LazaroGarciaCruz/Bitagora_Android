@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="10dp"
     app:bl_arrowDirection="top"
-    app:bl_arrowHeight="12dp"
+    app:bl_arrowHeight="0dp"
     app:bl_arrowWidth="12dp"
     app:bl_bubbleColor="#FC0254"
     app:bl_cornersRadius="20dp">

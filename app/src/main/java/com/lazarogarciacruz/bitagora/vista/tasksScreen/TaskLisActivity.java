@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Guideline;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -208,36 +209,40 @@ public class TaskLisActivity extends AppCompatActivity implements
             gifImageView.setScaleY(4.0f);
             gifImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-            float scaleX = 2.35f;
-            float scaleY = 2.35f;
+            if (!MyApp.getInstance().isSmallScreen()) {
 
-            /*gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter1);
-            drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character1.gif");
-            gifImageView.setBackground(drawable);
-            gifImageView.setScaleX(scaleX);
-            gifImageView.setScaleY(scaleY);
-            gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                float scaleX = MyApp.getInstance().isSmallScreen() ? 1f : 1.5f;
+                float scaleY = MyApp.getInstance().isSmallScreen() ? 1f : 1.5f;
 
-            gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter2);
-            drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character2.gif");
-            gifImageView.setBackground(drawable);
-            gifImageView.setScaleX(scaleX);
-            gifImageView.setScaleY(scaleY);
-            gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter1);
+                drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character1.gif");
+                gifImageView.setBackground(drawable);
+                gifImageView.setScaleX(scaleX);
+                gifImageView.setScaleY(scaleY);
+                gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
-            gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter3);
-            drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character3.gif");
-            gifImageView.setBackground(drawable);
-            gifImageView.setScaleX(scaleX);
-            gifImageView.setScaleY(scaleY);
-            gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter2);
+                drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character2.gif");
+                gifImageView.setBackground(drawable);
+                gifImageView.setScaleX(scaleX);
+                gifImageView.setScaleY(scaleY);
+                gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
-            gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter4);
-            drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character4.gif");
-            gifImageView.setBackground(drawable);
-            gifImageView.setScaleX(scaleX);
-            gifImageView.setScaleY(scaleY);
-            gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);*/
+                gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter3);
+                drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character3.gif");
+                gifImageView.setBackground(drawable);
+                gifImageView.setScaleX(scaleX);
+                gifImageView.setScaleY(scaleY);
+                gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+
+                gifImageView = (GifImageView) findViewById(R.id.taskListViewCabeceraCharacter4);
+                drawable = new GifDrawable(this.getAssets(), "gif/steampunk_character4.gif");
+                gifImageView.setBackground(drawable);
+                gifImageView.setScaleX(scaleX);
+                gifImageView.setScaleY(scaleY);
+                gifImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -259,16 +264,9 @@ public class TaskLisActivity extends AppCompatActivity implements
 
         Button botonFiltrar = (Button) findViewById(R.id.taskListViewBotonFiltrar);
         botonFiltrar.setShadowLayer(10, 0, 0, Color.GREEN);
-        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams)botonFiltrar.getLayoutParams();
-        params.setMargins(0, 0, MyApp.getInstance().isSmallScreen() ? 75 : 125, MyApp.getInstance().isSmallScreen() ? 5 : 20); //substitute parameters for left, top, right, bottom
-        botonFiltrar.setLayoutParams(params);
 
         Button botonCrearTrask = (Button) findViewById(R.id.taskListViewBotonCrearTask);
-        params = (FrameLayout.LayoutParams)botonCrearTrask.getLayoutParams();
-        params.setMargins(0, 0, MyApp.getInstance().isSmallScreen() ? 15 : 30, MyApp.getInstance().isSmallScreen() ? 5 : 20); //substitute parameters for left, top, right, bottom
-        botonCrearTrask.setLayoutParams(params);
         botonCrearTrask.setTextColor(Color.GREEN);
-        //botonCrearTrask.setShadowLayer(10, 0, 0, Color.GREEN);
         botonCrearTrask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

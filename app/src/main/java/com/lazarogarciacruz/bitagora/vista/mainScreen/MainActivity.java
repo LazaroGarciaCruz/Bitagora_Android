@@ -11,6 +11,7 @@ import android.graphics.Point;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Guideline;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -196,10 +197,9 @@ public class MainActivity extends AppCompatActivity implements
             gifImageView.setBackground(drawable);
             gifImageView.bringToFront();
 
-            ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
-            //params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 42 : 46, 15, 0); //substitute parameters for left, top, right, bottom
-            params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 87 : 145, 0, 0); //substitute parameters for left, top, right, bottom
-            gifImageView.setLayoutParams(params);
+            //ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
+            //params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 87 : 145, 0, 0); //substitute parameters for left, top, right, bottom
+            //gifImageView.setLayoutParams(params);
 
             gifImageView = (GifImageView) findViewById(R.id.mainViewCharacterSpeech);
             drawable = new GifDrawable(this.getAssets(), "gif/speechLista.gif");
@@ -207,21 +207,26 @@ public class MainActivity extends AppCompatActivity implements
             gifImageView.setBackground(drawable);
             gifImageView.bringToFront();
 
-            params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
-            params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 70 : 119, 10, 0); //substitute parameters for left, top, right, bottom
-            gifImageView.setLayoutParams(params);
+            //params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
+            //params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 70 : 119, 10, 0); //substitute parameters for left, top, right, bottom
+            //gifImageView.setLayoutParams(params);
 
             gifImageView = (GifImageView) findViewById(R.id.mainViewCharacterSwitch);
             drawable = new GifDrawable(this.getAssets(), "gif/switch_off.gif");
             gifImageView.setBackground(drawable);
             gifImageView.bringToFront();
 
-            params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
-            params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 118 : 186, MyApp.getInstance().isSmallScreen() ? 100 : 135, 0); //substitute parameters for left, top, right, bottom
-            gifImageView.setLayoutParams(params);
+            //params = (ConstraintLayout.LayoutParams)gifImageView.getLayoutParams();
+            //params.setMargins(0, MyApp.getInstance().isSmallScreen() ? 118 : 186, MyApp.getInstance().isSmallScreen() ? 100 : 135, 0); //substitute parameters for left, top, right, bottom
+            //gifImageView.setLayoutParams(params);
 
             ImageView viewFront = (ImageView)findViewById(R.id.mainViewBackgroundFront);
             viewFront.bringToFront();
+
+            Guideline guideline = (Guideline) findViewById(R.id.guidelineCharacterHorizontal);
+            ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) guideline.getLayoutParams();
+            params.guidePercent = MyApp.getInstance().isSmallScreen() ? 0.065f : 0.075f; // 45% // range: 0 <-> 1
+            guideline.setLayoutParams(params);
 
         } catch (Exception e) {
             e.printStackTrace();
